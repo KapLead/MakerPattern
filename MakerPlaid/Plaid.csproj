@@ -1,0 +1,593 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A07FDD47-3909-4593-A542-7AB133A0367A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MakerPlaid</RootNamespace>
+    <AssemblyName>MakerPlaid</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>pled.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MaterialSkin">
+      <HintPath>..\..\..\SummaryDataAnalis\SummaryDataAnalis\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ctrl\ColorComboPicer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\ColorComboPicer.Designer.cs">
+      <DependentUpon>ColorComboPicer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\ColorWidth.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\ColorWidth.Designer.cs">
+      <DependentUpon>ColorWidth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\Handweaving.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\Handweaving.Designer.cs">
+      <DependentUpon>Handweaving.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\Maps\HandweavingPro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\Maps\HandweavingPro.Designer.cs">
+      <DependentUpon>HandweavingPro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\Maps\HandweavingPro.Paint.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\Maps\MyColorGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\Maps\MyColorGrid.Designer.cs">
+      <DependentUpon>MyColorGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\PatternEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\PatternEditorControl.Designer.cs">
+      <DependentUpon>PatternEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\PlaidMakerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\PlaidMakerControl.Designer.cs">
+      <DependentUpon>PlaidMakerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\SelectColors.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ctrl\VerticalColorGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\VerticalColorGrid.Designer.cs">
+      <DependentUpon>VerticalColorGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\AdobeColorTablePaletteSerializer.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\AdobePhotoshopColorSwatchColorSpace.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\AdobePhotoshopColorSwatchFileVersion.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\AdobePhotoShopColorSwatchSerializer.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ColorBarStyle.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ColorCellBorderStyle.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ColorCollection.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ColorCollectionEventArgs.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ColorCollectionSortOrder.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ColorComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ColorComparer.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ColorEditingMode.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ColorEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ColorEditor.Designer.cs">
+      <DependentUpon>ColorEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ColorEditorManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ColorGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ColorGridSelectedCellStyle.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ColorHitTestInfo.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ColorPalette.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ColorPalettes.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ColorPickerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ColorPickerDialog.Designer.cs">
+      <DependentUpon>ColorPickerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ColorSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ColorSliderNubStyle.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ColorSource.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ColorWheel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\EditColorCancelEventArgs.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\GimpPaletteSerializer.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\HslColor.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\HueColorSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\IColorEditor.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\InterleavedBitmapPaletteSerializer.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\IPaletteSerializer.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\JascPaletteSerializer.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\LightnessColorSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\LowLevelKeyboardProc.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\LowLevelMouseProc.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\NativeMethods.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\NavigationOrigin.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\PaintHelper.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\PaintNetPaletteSerializer.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\PaletteSerializer.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\RawPaletteSerializer.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ResourceManager.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\RgbaChannel.cs" />
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\RgbaColorSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\SaturationColorSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ScreenColorPicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cyotek.Windows.Forms.ColorPicker\ScreenColorPickerHooks.cs" />
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Ctrl\ColorComboPicer.resx">
+      <DependentUpon>ColorComboPicer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrl\ColorWidth.resx">
+      <DependentUpon>ColorWidth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrl\Handweaving.resx">
+      <DependentUpon>Handweaving.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrl\Maps\HandweavingPro.resx">
+      <DependentUpon>HandweavingPro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrl\Maps\MyColorGrid.resx">
+      <DependentUpon>MyColorGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrl\PatternEditorControl.resx">
+      <DependentUpon>PatternEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrl\PlaidMakerControl.resx">
+      <DependentUpon>PlaidMakerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrl\VerticalColorGrid.resx">
+      <DependentUpon>VerticalColorGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Ctrl\Maps\HandweavingPro.Value.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.ab330fb3d4d3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopify-27-16-harness-patterns-the-fanciest-twills-of-all-irene-k-wood-34724-5-tl_large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_page_previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pled.png" />
+    <Content Include="pled.ico" />
+    <Content Include="WEAVEPOINT.ico" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\block--plus.png" />
+    <Content Include="63611-small-7-tl.png" />
+    <EmbeddedResource Include="Resources\cellbackground.png" />
+    <EmbeddedResource Include="Resources\eyedropper.cur" />
+    <EmbeddedResource Include="Resources\eyedropper.png" />
+    <None Include="Resources\minus.png" />
+    <None Include="Resources\color.png" />
+    <None Include="Resources\imgSave.png" />
+    <Content Include="Pattern\2x2\23352.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\2x2\32058.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\3x3\24308.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\3x3\32070.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\3x3\32167.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\4x4\23346.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\4x4\24092.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\4x4\24319.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\4x4\24355.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\4x4\27870.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\4x4\27881.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\4x4\27892.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\4x4\27903.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\4x4\27914.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\4x4\27928.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\4x4\32081.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\4x4\32097.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\4x4\32156.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\4x4\32284.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\5x5\24151.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\5x5\24164.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\5x5\24182.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\5x5\24212.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\5x5\24233.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\5x5\24309.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\5x5\24310.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\5x5\24330.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\5x5\27932.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\5x5\27933.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\5x5\27934.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\5x5\27935.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\5x5\27936.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\5x5\27937.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\5x5\27938.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\5x5\27939.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\5x5\27974.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\5x5\27976.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\5x5\27978.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\5x5\31823.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\5x5\32106.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\5x5\32180.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\23348.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\23389.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\23417.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\23982.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\24093.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\24101.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\24103.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\24157.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\24168.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\24186.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\24229.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\24234.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\24311.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\24312.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\24313.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\24314.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\28053.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\28054.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\28056.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\28057.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\28058.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\28059.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\28061.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\28062.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\6x6\28066.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\7x7\24169.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\7x7\24213.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\7x7\24222.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\7x7\24235.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\7x7\24284.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\7x7\28133.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\7x7\28134.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\7x7\28138.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\7x7\28139.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\7x7\28140.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\7x7\28141.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\7x7\28142.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\7x7\28144.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\7x7\28146.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\7x7\28154.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\7x7\28161.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\7x7\28162.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\7x7\28164.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\7x7\28166.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\8x8\23963.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\8x8\23965.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\8x8\23967.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\8x8\23983.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\8x8\24094.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\8x8\24095.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\8x8\24102.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\8x8\24109.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\8x8\24173.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\8x8\24174.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\8x8\24179.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\8x8\24214.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\8x8\24231.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\8x8\24260.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\8x8\24322.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\8x8\24326.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\8x8\24327.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\8x8\24328.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pattern\8x8\24331.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\palette-load.png" />
+    <Content Include="Resources\palette-save.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="AfterBuild">
+    <ItemGroup>
+      <MoveToLibFolder Include="$(OutputPath)*.dll ; $(OutputPath)*.pdb ; $(OutputPath)*.xml" />
+    </ItemGroup>
+    <Move SourceFiles="@(MoveToLibFolder)" DestinationFolder="$(OutputPath)lib" OverwriteReadOnlyFiles="true" />
+  </Target>
+</Project>
